@@ -1,0 +1,61 @@
+{
+  "name": "offer-creation",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.9",
+    "@mui/material": "^5.15.9",
+    "@mui/x-date-pickers": "^6.19.4",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.68",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@types/react-select": "^5.0.1",
+    "axios": "^1.6.8",
+    "date-fns": "^3.2.0",
+    "dayjs": "^1.11.10",
+    "lucide-react": "^0.475.0",
+    "material-react-table": "^2.12.1",
+    "react": "^18.2.0",
+    "react-date-range": "^2.0.0-alpha.4",
+    "react-datepicker": "^6.1.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.2",
+    "react-icons": "^4.12.0",
+    "react-router-dom": "^6.22.2",
+    "react-scripts": "^5.0.1",
+    "react-select": "^5.8.0",
+    "react-spinners": "^0.13.8",
+    "styled-components": "^6.1.8",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "npm run build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@types/react-date-range": "^1.4.9",
+    "@types/react-datepicker": "^6.0.1",
+    "tailwindcss": "^3.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

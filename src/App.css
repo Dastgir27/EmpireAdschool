@@ -1,0 +1,134 @@
+/*Offer form css*/
+.hr-line {
+  margin: 26px 0;
+  width: 100%;
+  border: 1px solid #F4F5F5;
+}
+
+.hr-line-16 {
+  margin: 16px 0;
+  width: 100%;
+  border: 1px solid #F4F5F5;
+}
+
+.form-input {
+  position: relative;
+  width: 100% !important;
+  font-family: Cerebri sans-light, serif;
+}
+
+.form-input input::placeholder {
+  opacity: 0;
+}
+
+.form-input input {
+  width: 100% !important;
+  font-family: Cerebri sans-light, serif;
+  height: 40px;
+  font-size: 14px !important;
+  padding: 12px;
+  outline: none;
+  border: 1px solid #d1d1d1;
+  box-sizing: border-box;
+  border-radius: 8px !important;
+}
+
+.form-error-input input {
+  border: 1px solid #e33716 !important;
+  border-radius: 8px !important;
+  box-sizing: border-box;
+  font-size: 14px !important;
+  height: 40px;
+  outline: none;
+  padding: 12px;
+}
+
+.form-error-input {
+  position: relative;
+}
+
+.form-input label {
+  font-family: Cerebri sans-light, serif;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px !important;
+  color: #000000;
+  letter-spacing: 0.3px;
+  transition: 0.1s;
+  padding: 0 4px 0 4px !important;
+}
+
+.form-input input:focus + label,
+.form-input input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 8px !important;
+  letter-spacing: 0.25px;
+  font-family: Cerebri sans-medium, serif;
+  color: #888888;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(247, 247, 247, 0) 50%
+  );
+  padding: 4px;
+}
+
+.form-input input:focus {
+  border: 1px solid #888;
+}
+
+.form-input input:hover {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.form-input input:disabled {
+  background-color: #fff;
+  cursor: not-allowed;
+  color: #888888;
+}
+
+.form-input input:-webkit-autofill,
+.form-input input:-webkit-autofill:hover,
+.form-input input:-webkit-autofill:focus,
+.form-input input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #000;
+}
+
+.error-msg {
+  font-size: 12px;
+  color: red;
+  font-family: Cerebri sans-light, serif;
+  padding-left: 15px;
+  padding-top: 4px;
+  margin-bottom: 0;
+}
+
+/*Date RangePicker*/
+.date-picker-filter {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #000;
+  height: 40px;
+  width: 100%;
+  border: 1px solid #d1d1d1;
+  padding: 5px 15px;
+}
+
+.rdrStaticRanges,
+.rdrInputRange,
+.rdrDateDisplayWrapper,
+.rdrStaticRange,
+.rdrDateRangeWrapper,
+.rdrMonthPicker,
+.rdrDateDisplayItem input,
+.rdrMonthAndYearPickers select {
+  font-family: Cerebri sans-medium, serif;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: black;
+}

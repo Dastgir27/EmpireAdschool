@@ -1,0 +1,46 @@
+# Dependency directories
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build files
+build/
+
+# Temporary files
+.DS_Store
+.log
+*.tmp
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# IDE / Editor files
+.idea/
+.vscode/
+
+# Compiled output
+dist/
+
+# Coverage reports
+coverage/
+
+# Generated files
+*.pem
+*.seed
+*.key
+*.csr
+*.cert
+*.srl
+*.crt
+*.cnf
+*.der
+*.pfx
+*.p12
+*.p7b
+*.spc
