@@ -171,8 +171,6 @@ export default function ContactPage() {
                   <MenuItem value="health-insurance">Health Insurance</MenuItem>
                   <MenuItem value="term-life">Term Life Insurance</MenuItem>
                   <MenuItem value="employee-benefits">Employee Benefits</MenuItem>
-                  <MenuItem value="employee-benefits">Employee Benefits</MenuItem>
-
                   <MenuItem value="other">Other</MenuItem>
                 </Select>
               </FormControl>
