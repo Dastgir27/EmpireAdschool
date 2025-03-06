@@ -1,82 +1,83 @@
 import React from "react";
-import { Box, Container, Grid, Typography, Link, TextField, Button } from "@mui/material";
 import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
+
 
 export default function Footer() {
   return (
-      <Box sx={{ bgcolor: "#222", color: "white", py: 5 }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={4}>
-            {/* About Section */}
-            <Grid item xs={12} sm={6} md={3}>
-              <Typography variant="h6" fontWeight="bold">
-                About Us
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 1, color: "#bbb" }}>
-                MasterCamp Academy provides world-class education and career-transforming courses.
-              </Typography>
-            </Grid>
+    <footer className="bg-[#2C2A26] text-[#D9CDC4] py-12">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {/* About Section */}
+          <div>
+            <h2 className="text-xl font-bold text-[#A67C52]">About Us</h2>
+            <p className="mt-2 text-[#B9A48A] text-sm">
+              MasterCamp Academy provides world-class education and career-transforming courses.
+            </p>
+          </div>
 
-            {/* Quick Links */}
-            <Grid item xs={12} sm={6} md={3}>
-              <Typography variant="h6" fontWeight="bold">
-                Quick Links
-              </Typography>
-              <Box sx={{ mt: 1 }}>
-                <Link href="#" color="inherit" underline="hover" display="block">Courses</Link>
-                <Link href="#" color="inherit" underline="hover" display="block">Admissions</Link>
-                <Link href="#" color="inherit" underline="hover" display="block">Scholarships</Link>
-                <Link href="#" color="inherit" underline="hover" display="block">Contact</Link>
-              </Box>
-            </Grid>
+          {/* Quick Links */}
+          <div>
+            <h2 className="text-xl font-bold text-[#A67C52]">Quick Links</h2>
+            <ul className="mt-2 space-y-2 text-[#B9A48A]">
+              <li><a href="#" className="hover:text-[#A67C52] transition">Courses</a></li>
+              <li><a href="#" className="hover:text-[#A67C52] transition">Admissions</a></li>
+              <li><a href="#" className="hover:text-[#A67C52] transition">Scholarships</a></li>
+              <li><a href="#" className="hover:text-[#A67C52] transition">Contact</a></li>
+            </ul>
+          </div>
 
-            {/* Contact Info */}
-            <Grid item xs={12} sm={6} md={3}>
-              <Typography variant="h6" fontWeight="bold">
-                Contact Us
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 1, color: "#bbb" }}>
-                📍 123 Academy Street, NY, USA <br />
-                📧 info@mastercamp.com <br />
-                📞 +1 234 567 890
-              </Typography>
-            </Grid>
+          {/* Contact Info */}
+          <div>
+            <h2 className="text-xl font-bold text-[#A67C52]">Contact Us</h2>
+            <p className="mt-2 text-[#B9A48A] text-sm leading-relaxed">
+              📍 123 Academy Street, NY, USA <br />
+              📧 info@mastercamp.com <br />
+              📞 +1 234 567 890
+            </p>
+          </div>
 
-            {/* Newsletter Subscription */}
-            <Grid item xs={12} sm={6} md={3}>
-              <Typography variant="h6" fontWeight="bold">
-                Subscribe to Newsletter
-              </Typography>
-              <Box sx={{ mt: 1, display: "flex", gap: 1 }}>
-                <TextField
-                    variant="outlined"
-                    size="small"
-                    placeholder="Your Email"
-                    sx={{ bgcolor: "white", borderRadius: 1, flexGrow: 1 }}
-                />
-                <Button variant="contained" color="primary">Subscribe</Button>
-              </Box>
-            </Grid>
-          </Grid>
+          {/* Newsletter Subscription */}
+          <div>
+            <h2 className="text-xl font-bold text-[#A67C52]">Subscribe to Newsletter</h2>
+            <div className="mt-3 flex">
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full px-4 py-2 bg-[#D9CDC4] text-[#2C2A26] rounded-l-md focus:outline-none"
+              />
+              <button className="px-4 py-2 bg-[#A67C52] text-white rounded-r-md hover:bg-[#8B5E3C] transition">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
 
-          {/* Social Media Links */}
-          <Box sx={{ textAlign: "center", mt: 4 }}>
-            <Typography variant="body2" sx={{ mb: 1 }}>Follow us on</Typography>
-            <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-              <Link href="#" color="inherit"><Facebook /></Link>
-              <Link href="#" color="inherit"><Twitter /></Link>
-              <Link href="#" color="inherit"><Instagram /></Link>
-              <Link href="#" color="inherit"><LinkedIn /></Link>
-            </Box>
-          </Box>
+        {/* Social Media Links */}
+        <div className="text-center mt-10">
+  <p className="text-[#B9A48A] mb-3">Follow us on</p>
+  <div className="flex justify-center space-x-4">
+    <a href="#" className="text-[#D9CDC4] hover:text-[#A67C52] transition text-2xl">
+      <Facebook fontSize="inherit" />
+    </a>
+    <a href="#" className="text-[#D9CDC4] hover:text-[#A67C52] transition text-2xl">
+      <Twitter fontSize="inherit" />
+    </a>
+    <a href="#" className="text-[#D9CDC4] hover:text-[#A67C52] transition text-2xl">
+      <Instagram fontSize="inherit" />
+    </a>
+    <a href="#" className="text-[#D9CDC4] hover:text-[#A67C52] transition text-2xl">
+      <LinkedIn fontSize="inherit" />
+    </a>
+  </div>
+</div>
 
-          {/* Copyright */}
-          <Box sx={{ textAlign: "center", mt: 3, borderTop: "1px solid #444", pt: 2 }}>
-            <Typography variant="body2" color="textSecondary">
-              © {new Date().getFullYear()} MasterCamp Academy. All rights reserved.
-            </Typography>
-          </Box>
-        </Container>
-      </Box>
+        {/* Copyright */}
+        <div className="border-t border-[#444] text-center mt-8 pt-4">
+          <p className="text-sm text-[#B9A48A]">
+            © {new Date().getFullYear()} MasterCamp Academy. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }

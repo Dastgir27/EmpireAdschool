@@ -1,32 +1,29 @@
 import React, { useState } from "react";
-import { Box, Card, Typography, Avatar, Button } from "@mui/material";
-import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 // Testimonial Data
 const testimonials = [
   {
     quote:
-        "GMC + wellness plan is of great help to my team during these tough times. We are surely a happy client. Great job guys!",
-    name: "Nikunj Verma",
-    title: "CEO, Cutshort",
-    companyLogo: "https://via.placeholder.com/20", // Replace with actual logo
-    image: "https://via.placeholder.com/100", // Replace with actual image
+      "The MasterCamp program has completely changed my career trajectory. The mentorship and structured learning were invaluable!",
+    name: "Rajesh Kumar",
+    title: "Software Engineer, Infosys",
+    image: "https://dummyimage.com/100x100/000000/ffffff",
   },
   {
     quote:
-        "This platform has transformed our workflow, making operations smoother than ever. Highly recommended!",
-    name: "John Doe",
-    title: "CTO, TechCorp",
-    companyLogo: "https://via.placeholder.com/20",
-    image: "https://via.placeholder.com/100",
+      "As a creative professional, this platform gave me the right resources and guidance to upskill efficiently. Highly recommended!",
+    name: "Aditi Sharma",
+    title: "Creative Director, DesignX",
+    image: "https://dummyimage.com/100x100/000000/ffffff",
   },
   {
     quote:
-        "A game-changer for our business! The efficiency and ease of use are unparalleled.",
-    name: "Jane Smith",
-    title: "Founder, StartupX",
-    companyLogo: "https://via.placeholder.com/20",
-    image: "https://via.placeholder.com/100",
+      "The courses are top-notch! The hands-on projects helped me gain real-world skills, making me job-ready in no time.",
+    name: "Vikram Patel",
+    title: "Data Scientist, TCS",
+    image: "https://dummyimage.com/100x100/000000/ffffff",
   },
 ];
 
@@ -34,100 +31,51 @@ export default function TestimonialSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
   };
 
-  const { quote, name, title, companyLogo, image } = testimonials[currentIndex];
+  const { quote, name, title, image } = testimonials[currentIndex];
 
   return (
-      <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            minHeight: "50vh",
-            background: "#3a0d63",
-            color: "white",
-            padding: 4,
-          }}
-      >
-        <Card
-            sx={{
-              maxWidth: 700,
-              width: "100%",
-              p: 4,
-              borderRadius: 3,
-              boxShadow: 4,
-              textAlign: "center",
-              bgcolor: "rgba(255, 255, 255, 0.1)",
-            }}
-        >
-          <Typography variant="h5" fontWeight="bold">
-            Impact we made
-          </Typography>
-          <Box
-              sx={{
-                my: 3,
-                fontStyle: "italic",
-                fontSize: "1.2rem",
-                color: "#ddd",
-              }}
-          >
-            “{quote}”
-          </Box>
-          <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 2,
-                mt: 2,
-              }}
-          >
-            <Avatar src={image} alt={name} sx={{ width: 60, height: 60 }} />
-            <Box>
-              <Typography fontWeight="bold">{name}</Typography>
-              <Typography variant="body2">{title}</Typography>
-              <img src={companyLogo} alt="company logo" width={50} />
-            </Box>
-          </Box>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#EDE0D4] to-[#D6CCC2] px-6">
+      <div className="max-w-2xl w-full bg-white shadow-lg rounded-xl p-8 text-center border border-gray-200">
+        <h3 className="text-xl font-semibold text-[#8B5E3C]">Impact We Made</h3>
+        
+        <p className="mt-4 italic text-lg text-gray-700 transition-opacity duration-500">
+          “{quote}”
+        </p>
 
-          {/* Navigation Buttons */}
-          <Box sx={{ display: "flex", justifyContent: "center", mt: 3, gap: 2 }}>
-            <Button
-                onClick={prevSlide}
-                variant="contained"
-                sx={{
-                  minWidth: 40,
-                  bgcolor: "rgba(255,255,255,0.3)",
-                  color: "white",
-                  "&:hover": { bgcolor: "rgba(255,255,255,0.5)" },
-                }}
-            >
-              <ArrowBackIos fontSize="small" />
-            </Button>
-            <Button
-                onClick={nextSlide}
-                variant="contained"
-                sx={{
-                  minWidth: 40,
-                  bgcolor: "rgba(255,255,255,0.3)",
-                  color: "white",
-                  "&:hover": { bgcolor: "rgba(255,255,255,0.5)" },
-                }}
-            >
-              <ArrowForwardIos fontSize="small" />
-            </Button>
-          </Box>
-        </Card>
-      </Box>
+        {/* User Info */}
+        <div className="flex items-center justify-center gap-4 mt-6">
+          <img src={image} alt={name} className="w-16 h-16 rounded-full border-4 border-[#D6A17E]" />
+          <div>
+            <h4 className="text-lg font-semibold text-gray-900">{name}</h4>
+            <p className="text-sm text-gray-600">{title}</p>
+          </div>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="flex justify-center mt-6 space-x-4">
+          <button
+            onClick={prevSlide}
+            className="p-3 rounded-full bg-[#C08552] text-white hover:bg-[#8B5E3C] transition-all duration-300"
+          >
+          <ArrowBackIcon />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="p-3 rounded-full bg-[#C08552] text-white hover:bg-[#8B5E3C] transition-all duration-300"
+          >
+           <ArrowForwardIcon />
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }

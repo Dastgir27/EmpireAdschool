@@ -1,60 +1,47 @@
 "use client"; // If using Next.js
 
 import React from "react";
-import { Box, Button, Card, CardContent, Chip, Typography } from "@mui/material";
 
 export default function MoneyBackGuarantee() {
   return (
-      <Card sx={{ maxWidth: 1200, mx: "auto", p: 3, boxShadow: 3, borderRadius: 3 }}>
-        <CardContent sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, alignItems: "center", gap: 3 }}>
+    <div className="w-full px-8 py-12 flex flex-col md:flex-row items-center gap-10 bg-[#D9CDC4] text-[#4A3F35] shadow-lg">
+      {/* Left Side: Text Content */}
+      <div className="flex-1 text-center md:text-left max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-[#4A3F35] leading-snug">
+          Our Promise: Love it or Leave it —  
+          <span className="text-[#A67C52]"> 100% Money-Back Guarantee</span>
+        </h2>
+        <p className="text-[#5F5145] mt-4 leading-relaxed">
+          We believe in the power of our program, our mentors, and the real-world learning we deliver.
+          If you attend the sessions, submit your assignments, actively participate, and still feel the  
+          course isn’t worth what you paid — we’ll refund 100% of your fees.  
+          Because great education stands tall on its value, not just its price.
+        </p>
 
-          {/* Left Side: Text Content */}
-          <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" } }}>
-            <Typography variant="subtitle1" color="textSecondary">
-              No Questions Asked!
-            </Typography>
-            <Typography variant="h4" fontWeight="bold" gutterBottom>
-              100% Money Back Guarantee
-            </Typography>
-            <Typography variant="body1" color="textSecondary" gutterBottom>
-              If you are unhappy with the course because we couldn’t teach you anything new, you may qualify for our{" "}
-              <strong>strong 100% money back guarantee</strong> and get a full refund within 7 days of your purchase as per our Refund Policy.
-            </Typography>
+        {/* Guarantee Points */}
+        <div className="flex flex-wrap gap-3 mt-5">
+          <span className="bg-[#B9A48A] text-[#4A3F35] px-4 py-2 rounded-md text-sm font-medium">
+            ✅ Join with confidence. Learn without fear.
+          </span>
+          <span className="bg-[#B9A48A] text-[#4A3F35] px-4 py-2 rounded-md text-sm font-medium">
+            ✅ We invest in you — and we expect you to invest your effort too.
+          </span>
+        </div>
 
-            {/* Guarantee Badges */}
-            <Box sx={{ display: "flex", gap: 1, my: 2 }}>
-              <Chip label="✔ 100% Refund Available" color="default" variant="outlined" />
-              <Chip label="✔ 7 Day Refund Policy" color="default" variant="outlined" />
-            </Box>
+        {/* CTA Button */}
+        <button className="mt-6 px-6 py-3 bg-[#A67C52] text-white font-medium rounded-lg text-lg hover:bg-[#8B5E3C] transition duration-300">
+          Get a 75% Discount
+        </button>
+      </div>
 
-            {/* CTA Button */}
-            <Button variant="contained" color="primary" sx={{ mt: 2, px: 4, borderRadius: 2 }}>
-              Get a 75% Discount
-            </Button>
-          </Box>
-
-          {/* Right Side: Image Section */}
-          <Box sx={{ position: "relative", flex: 1, textAlign: "center" }}>
-            <img
-                src="https://source.unsplash.com/400x300/?happy,person" // Replace with your image URL
-                alt="Happy customer"
-                style={{ width: "100%", maxWidth: 350, borderRadius: 8 }}
-            />
-
-            {/* Money Back Badge */}
-            <Box sx={{
-              position: "absolute",
-              top: 10,
-              right: 10,
-              width: 80,
-              height: 80,
-              backgroundImage: "url(https://i.imgur.com/J0zrRZ7.png)", // Replace with your badge image URL
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat"
-            }} />
-          </Box>
-
-        </CardContent>
-      </Card>
+      {/* Right Side: Image Section */}
+      <div className="flex-1 text-center max-w-3xl mx-auto">
+        <img
+          src="https://dummyimage.com/600x400/ffffff/000000"
+          alt="Happy customer"
+          className="w-full max-w-[500px] rounded-lg shadow-md"
+        />
+      </div>
+    </div>
   );
 }

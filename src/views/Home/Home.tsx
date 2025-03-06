@@ -3,7 +3,7 @@ import MasterCampLanding from "./MasterCampLandingPage";
 import MoneyBackGuarantee from "./MoneyBackGuarantee";
 import ConnectForm from "./ConnectForm";
 import TestimonialSlider from "./TestimonialSlider";
-import StartupWeekend from "./StartupWeekend";
+import MentorsSection from "./MentorsSection";
 import ProgramSections from "./ProgramSections";
 
 export default function Main() {
@@ -13,7 +13,7 @@ export default function Main() {
           <MasterCampLanding/>
           <ProgramSections/>
           <MoneyBackGuarantee/>
-          <StartupWeekend/>
+          <MentorsSection/>
           <ConnectForm/>
           <TestimonialSlider/>
       </div>

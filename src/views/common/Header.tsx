@@ -47,7 +47,7 @@ export default function Header() {
 
       {/* Buttons */}
       <div className="flex gap-3">
-        <button className="hidden md:inline-block border border-white px-4 py-2 rounded-full">Hire From Us</button>
+        <button className="hidden md:inline-block border border-white px-4 py-2 rounded-full">Contact Us</button>
 
         {/* Explore Programs Button */}
         <button
