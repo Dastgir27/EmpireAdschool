@@ -6,19 +6,24 @@ import ContactPage from './views/Contact/Contact';
 import Header from './views/common/Header';
 import Footer from './views/common/Footer'
 import './styles/fonts/fonts.css'
-
+import Visualise from './views/courses/Visualise';
+import DesignMastery from './views/courses/DesignMastery';
+import CreativeMastery from './views/courses/CreativeMastery';
 
 function App() {
   return (
     <div>
-      <Header/>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </Router>
-      <Footer/>
+   <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/creative-thinking" element={<Visualise />} />
+        <Route path="/design-mastery" element={<DesignMastery />} />
+        <Route path="/complete-creative-mastery" element={<CreativeMastery />} />
+      </Routes>
+      <Footer />
+    </Router>
     </div>
   );
 }

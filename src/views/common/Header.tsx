@@ -1,31 +1,34 @@
 import { useState } from "react";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import { Link } from "react-router-dom";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedProgram, setSelectedProgram] = useState("Strategic Business Management");
+  const [selectedProgram, setSelectedProgram] = useState("Creative Thinking & Copyline Mastery");
 
   const programs = [
     {
-      title: "Strategic Business Management",
-      duration: "12 Months",
-      mode: "Blended",
+      title: "Design Mastery Program",
+      link: "/design-mastery",
+      duration: "1.5 Months",
+      mode: "Weekend",
       format: "Hands-on",
-      cohort: "March, 2025",
-    },
-    {
-      title: "Strategic Marketing & AI",
-      duration: "10 Months",
-      mode: "Blended",
-      format: "Practical",
       cohort: "April, 2025",
     },
     {
-      title: "Applied Finance",
-      duration: "8 Months",
-      mode: "Hybrid",
-      format: "Case-Based",
+      title: "Creative Thinking & Copyline Mastery",
+      link: "/creative-thinking",
+      duration: "1.5 Months",
+      mode: "Weekend",
+      format: "Bootcamp",
+      cohort: "March, 2025",
+    },
+    {
+      title: "Complete Creative Mastery",
+      link: "/complete-creative-mastery",
+      duration: "1.5 Months",
+      mode: "Weekend",
+      format: "Full-Cycle",
       cohort: "June, 2025",
     },
   ];
@@ -34,20 +37,24 @@ export default function Header() {
     <header className="bg-black text-white py-4 px-6 md:px-12 flex justify-between items-center relative">
       {/* Logo */}
       <div className="text-2xl font-bold flex items-center">
-        <span className="bg-gradient-to-r from-yellow-400 to-pink-500 px-2 py-1 rounded-md text-black">M</span>
-        <span className="ml-2">asterCamp</span>
-      </div>
+  <Link to="/" className="flex items-center">
+    <span className="bg-gradient-to-r from-yellow-400 to-pink-500 px-2 py-1 rounded-md text-black">M</span>
+    <span className="ml-2">asterCamp</span>
+  </Link>
+    </div>
 
       {/* Navigation */}
       <nav className="hidden md:flex gap-6">
-        <a href="#" className="hover:text-gray-300 transition-colors">Youtube ↗</a>
+        <a href="#" className="hover:text-gray-300 transition-colors">YouTube ↗</a>
         <a href="#" className="hover:text-gray-300 transition-colors">Instagram ↗</a>
         <a href="#" className="hover:text-gray-300 transition-colors">LinkedIn ↗</a>
       </nav>
 
       {/* Buttons */}
       <div className="flex gap-3">
-        <button className="hidden md:inline-block border border-white px-4 py-2 rounded-full">Contact Us</button>
+        <Link to="/contact" className="hidden md:inline-block border border-white px-4 py-2 rounded-full">
+          Contact Us
+        </Link>
 
         {/* Explore Programs Button */}
         <button
@@ -56,7 +63,7 @@ export default function Header() {
         >
           Explore Programmes
           <span className={`ml-2 transform ${isDropdownOpen ? "rotate-180" : "rotate-0"} transition-transform`}>
-            <ExpandMoreIcon/>
+            <ExpandMoreIcon />
           </span>
         </button>
       </div>
@@ -65,38 +72,38 @@ export default function Header() {
       {isDropdownOpen && (
         <div className="absolute left-0 top-full w-full bg-black text-white shadow-lg p-6 mt-2 z-50">
           <div className="flex flex-col md:flex-row">
-            {/* Sidebar - Program Tabs */}
+            {/* Sidebar - Program Tabs (Non-Clickable) */}
             <div className="md:w-1/4 flex flex-col gap-3">
               {programs.map((program) => (
-                <button
+                <div
                   key={program.title}
-                  className={`p-3 rounded-lg text-left font-medium transition-all ${
+                  className={`p-3 rounded-lg text-left font-medium ${
                     selectedProgram === program.title
-                      ? "bg-gradient-to-r from-red-500 to-yellow-400 text-black font-bold"
+                      ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-bold"
                       : "hover:text-gray-300"
                   }`}
-                  onClick={() => setSelectedProgram(program.title)}
+                  onMouseEnter={() => setSelectedProgram(program.title)}
                 >
-                  {program.title} →
-                </button>
+                  {program.title}
+                </div>
               ))}
             </div>
 
-            {/* Program Details */}
+            {/* Program Details (Clickable) */}
             <div className="md:w-3/4 p-6">
               {programs.map(
                 (program) =>
                   selectedProgram === program.title && (
-                    <div key={program.title}>
-                      <h2 className="text-2xl font-bold">{program.title}</h2>
+                    <Link to={program.link} key={program.title} onClick={() => setIsDropdownOpen(false)}>
+                      <h2 className="text-2xl font-bold hover:text-yellow-500 transition">{program.title}</h2>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
                         <ProgramDetail label="Duration" value={program.duration} />
                         <ProgramDetail label="Mode" value={program.mode} />
                         <ProgramDetail label="Format" value={program.format} />
-                        <ProgramDetail label="Cohort 1" value={program.cohort} />
+                        <ProgramDetail label="Cohort" value={program.cohort} />
                       </div>
 
-                      {/* Section Links (No Underline) */}
+                      {/* Section Links */}
                       <div className="flex flex-wrap gap-4 mt-6 text-sm font-medium">
                         <a href="#" className="hover:text-gray-300 transition-colors">OVERVIEW</a>
                         <a href="#" className="hover:text-gray-300 transition-colors">WHY {program.title.split(" ")[0]}</a>
@@ -107,7 +114,7 @@ export default function Header() {
                         <a href="#" className="hover:text-gray-300 transition-colors">CURRICULUM</a>
                         <a href="#" className="hover:text-gray-300 transition-colors">FAQs</a>
                       </div>
-                    </div>
+                    </Link>
                   )
               )}
             </div>
@@ -127,4 +134,3 @@ function ProgramDetail({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
-

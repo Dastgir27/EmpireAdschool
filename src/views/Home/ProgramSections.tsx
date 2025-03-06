@@ -15,6 +15,7 @@ export default function ProgramSections() {
             " Target average placement of 4.5-8 LPA with Portfolio Curation & Direct Industry Referrals from our Career Advisory Team",
           ],
           image: "https://dummyimage.com/400x250/000/fff",
+          link:"/design-mastery",
         },
         {
           title: "Ctrl + V Visualize - Creative Copy Writing",
@@ -29,6 +30,7 @@ export default function ProgramSections() {
             " Target average placement of 5-9 LPA with Portfolio Showcasing & Direct Connects via our Career Advisory Team",
           ],
           image: "https://dummyimage.com/400x250/000/fff",
+          link:"/creative-thinking",
         },
         {
           title: "Ctrl + C + V Visualize - Master Branding Program",
@@ -44,6 +46,7 @@ export default function ProgramSections() {
             " Because great campaigns need both a Headline & a Design that turns heads.",
           ],
           image: "https://dummyimage.com/400x250/000/fff",
+          link:"/complete-creative-mastery",
         },
       ];
 
@@ -94,7 +97,7 @@ export default function ProgramSections() {
 
             <div className="mt-6">
               <a
-                href="#"
+                href={selectedProgram.link}
                 className="inline-flex items-center border border-black rounded-full px-6 py-2 text-black font-medium hover:bg-black hover:text-white transition"
               >
                 EXPLORE PROGRAMME
