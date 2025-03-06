@@ -4,7 +4,7 @@ import React from "react";
 
 export default function MoneyBackGuarantee() {
   return (
-    <div className="w-full px-8 py-12 flex flex-col md:flex-row items-center gap-10 bg-[#D9CDC4] text-[#4A3F35] shadow-lg">
+    <div className="w-full px-8 py-12 flex flex-col md:flex-row items-center gap-10 bg-[#D9CDC4] text-[#4A3F35] shadow-lg min-h-screen">
       {/* Left Side: Text Content */}
       <div className="flex-1 text-center md:text-left max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-[#4A3F35] leading-snug">
