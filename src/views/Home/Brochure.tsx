@@ -57,7 +57,7 @@ export function Brochure() {
         </div>
         <div className="text-center mt-12">
         <p className="text-lg font-medium">Want to know more about us?</p>
-        <button className="mt-4 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg text-lg hover:bg-green-600 transition duration-300 border-2 border-black">
+        <button className="mt-4 px-6 py-3 bg-green-500 text-[#0A0F23] font-semibold rounded-lg text-lg hover:bg-green-600 transition duration-300 border-2 border-black">
           Download Brochure
         </button>
       </div>
