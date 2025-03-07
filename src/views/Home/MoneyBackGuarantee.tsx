@@ -34,7 +34,7 @@ export default function MoneyBackGuarantee() {
       {/* Right Side: Image Section */}
       <div className="flex-1 text-center max-w-3xl mx-auto">
         <img
-          src="https://dummyimage.com/600x400/ffffff/000000"
+          src="https://dummyimage.com/600x600/ffffff/000000"
           alt="Happy customer"
           className="w-full max-w-[500px] rounded-lg shadow-md"
         />

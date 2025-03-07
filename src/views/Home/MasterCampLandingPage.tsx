@@ -17,11 +17,11 @@ const MasterCampLanding = () => {
         {/* Image Section */}
         <section className="px-12 mb-16">
           <div className="rounded-2xl overflow-hidden">
-            {/* <img
-                src="/api/placeholder/1000/500"
+            <img
+                src="/banner.jpeg"
                 alt="MasterCamp classroom session with instructor and students"
-                className="w-full h-72 object-cover"
-            /> */}
+                className="w-full h-80 object-cover"
+            />
           </div>
         </section>
        

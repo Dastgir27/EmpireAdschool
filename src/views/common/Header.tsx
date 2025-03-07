@@ -56,14 +56,15 @@ export default function Header() {
 
         {/* Explore Programs Button */}
         <button
-          className="border border-white px-4 py-2 rounded-full flex items-center"
-          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-        >
+        className="bg-white text-black border border-white px-4 py-2 rounded-full flex items-center transition duration-300 hover:bg-black hover:text-white"
+         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
           Explore Programmes
-          <span className={`ml-2 transform ${isDropdownOpen ? "rotate-180" : "rotate-0"} transition-transform`}>
-            <ExpandMoreIcon />
-          </span>
-        </button>
+            <span className={`ml-2 transform ${isDropdownOpen ? "rotate-180" : "rotate-0"} transition-transform`}>
+          <ExpandMoreIcon />
+         </span>
+          </button>
+
       </div>
 
       {/* Dropdown Section */}

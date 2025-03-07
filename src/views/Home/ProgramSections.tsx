@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CalendarToday, LocationOn, AccessTime, Person } from "@mui/icons-material";
 
 export default function ProgramSections() {
     const programs = [
@@ -53,10 +54,10 @@ export default function ProgramSections() {
   const [selectedProgram, setSelectedProgram] = useState(programs[0]);
 
   return (
-    <section className="py-12 px-6 md:px-16 bg-gray-100 text-black">
-      <h2 className="text-4xl font-bold mb-8">Programmes at a Glance</h2>
+    <section className="py-12 px-6 md:px-16 bg-gray-100 text-black ">
+      <h2 className="text-4xl font-bold text-center mb-8 p-4">Programmes at a Glance</h2>
 
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row gap-6 mb-8">
         {/* Sidebar (Program List) */}
         <div className="md:w-1/4 flex md:flex-col gap-3 overflow-x-auto md:overflow-visible pb-4 md:pb-0">
           {programs.map((program, index) => (
@@ -134,16 +135,15 @@ interface ProgramDetailProps {
 function ProgramDetail({ icon, label, value }: ProgramDetailProps) {
   return (
     <div className="flex items-start space-x-3">
-      <div className="p-2 rounded-full bg-gray-100">
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          {icon === "calendar" && (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          )}
-          {icon === "location" && (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-          )}
-        </svg>
+      {/* Icon Container */}
+      <div className="p-2 rounded-full bg-gray-100 text-black">
+        {icon === "calendar" && <CalendarToday className="w-5 h-5" />}
+        {icon === "location" && <LocationOn className="w-5 h-5" />}
+        {icon === "clock" && <AccessTime className="w-5 h-5" />}
+        {icon === "teacher" && <Person className="w-5 h-5" />}
       </div>
+
+      {/* Label & Value */}
       <div>
         <p className="font-medium">{label}</p>
         <p className="text-gray-600">{value}</p>
