@@ -14,7 +14,7 @@ export default function ProgramSections() {
             " Test your skills with 4 Live Branding Projects — Real Clients, Real Briefs, Real Feedback",
             " Target average placement of 4.5-8 LPA with Portfolio Curation & Direct Industry Referrals from our Career Advisory Team",
           ],
-          image: "https://dummyimage.com/400x250/000/fff",
+          image: "/001.jpg",
           link:"/design-mastery",
         },
         {
@@ -29,7 +29,7 @@ export default function ProgramSections() {
             " Test your pen with 4 Live Campaign Briefs — Write for Real Brands, Real Products, Real Impact",
             " Target average placement of 5-9 LPA with Portfolio Showcasing & Direct Connects via our Career Advisory Team",
           ],
-          image: "https://dummyimage.com/400x250/000/fff",
+          image: "/002.jpg",
           link:"/creative-thinking",
         },
         {
@@ -45,7 +45,7 @@ export default function ProgramSections() {
             " Target average placement of 6-12 LPA with a Portfolio that’s 2X More Powerful",
             " Because great campaigns need both a Headline & a Design that turns heads.",
           ],
-          image: "https://dummyimage.com/400x250/000/fff",
+          image: "/003.jpg",
           link:"/complete-creative-mastery",
         },
       ];
@@ -75,48 +75,50 @@ export default function ProgramSections() {
         </div>
 
         {/* Main Content */}
-        <div className="md:w-3/4 bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col lg:flex-row">
-          <div className="lg:w-3/5">
-            <h3 className="text-2xl font-bold mb-4">{selectedProgram.title}</h3>
+        {/* Main Content */}
+<div className="md:w-3/4 bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col lg:flex-row lg:gap-12">
+  <div className="lg:w-3/5">
+    <h3 className="text-2xl font-bold mb-4">{selectedProgram.title}</h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-              <ProgramDetail icon="calendar" label="Round 3 Deadline" value={selectedProgram.deadline} />
-              <ProgramDetail icon="location" label={selectedProgram.mode} value={selectedProgram.modeDetails} />
-              <ProgramDetail icon="clock" label="Duration" value={selectedProgram.duration} />
-              <ProgramDetail icon="teacher" label="Taught by" value={selectedProgram.instructors} />
-            </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+      <ProgramDetail icon="calendar" label="Round 3 Deadline" value={selectedProgram.deadline} />
+      <ProgramDetail icon="location" label={selectedProgram.mode} value={selectedProgram.modeDetails} />
+      <ProgramDetail icon="clock" label="Duration" value={selectedProgram.duration} />
+      <ProgramDetail icon="teacher" label="Taught by" value={selectedProgram.instructors} />
+    </div>
 
-            <div className="space-y-3">
-              {selectedProgram.keyPoints.map((point, index) => (
-                <p key={index} className="flex items-start space-x-2">
-                  <span className="text-lg">✱</span>
-                  <span>{point}</span>
-                </p>
-              ))}
-            </div>
+    <div className="space-y-3">
+      {selectedProgram.keyPoints.map((point, index) => (
+        <p key={index} className="flex items-start space-x-2">
+          <span className="text-lg">✱</span>
+          <span>{point}</span>
+        </p>
+      ))}
+    </div>
 
-            <div className="mt-6">
-              <a
-                href={selectedProgram.link}
-                className="inline-flex items-center border border-black rounded-full px-6 py-2 text-black font-medium hover:bg-black hover:text-white transition"
-              >
-                EXPLORE PROGRAMME
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </div>
+    <div className="mt-6">
+      <a
+        href={selectedProgram.link}
+        className="inline-flex items-center border border-black rounded-full px-6 py-2 text-black font-medium hover:bg-black hover:text-white transition"
+      >
+        EXPLORE PROGRAMME
+        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
 
-          {/* Image Section */}
-          <div className="lg:w-2/5 mt-6 lg:mt-0">
-            <img
-              src={selectedProgram.image}
-              alt={selectedProgram.title}
-              className="w-full h-48 sm:h-64 object-cover rounded-lg"
-            />
-          </div>
-        </div>
+  {/* Image Section */}
+  <div className="lg:w-2/5 mt-8 lg:mt-0">
+    <img
+      src={selectedProgram.image}
+      alt={selectedProgram.title}
+      className="w-full h-full object-cover rounded-lg"
+    />
+  </div>
+</div>
+
       </div>
     </section>
   );

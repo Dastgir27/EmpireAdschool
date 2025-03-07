@@ -1,7 +1,7 @@
 
 export default function MoneyBackGuarantee() {
   return (
-    <div className="w-full px-8 py-12 flex flex-col md:flex-row items-center gap-10 bg-[#000000] text-white shadow-lg min-h-screen">
+    <div className="w-full px-24 py-12 flex flex-col md:flex-row items-center gap-10 bg-[#000000] text-white shadow-lg min-h-screen">
       {/* Left Side: Text Content */}
       <div className="flex-1 text-center md:text-left max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold leading-snug">
