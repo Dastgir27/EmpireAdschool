@@ -35,13 +35,11 @@ export default function Header() {
 
   return (
     <header className="bg-black text-white py-4 px-6 md:px-12 flex justify-between items-center relative">
-      {/* Logo */}
-      <div className="text-2xl font-bold flex items-center">
-  <Link to="/" className="flex items-center">
-    <span className="bg-gradient-to-r from-yellow-400 to-pink-500 px-2 py-1 rounded-md text-black">M</span>
-    <span className="ml-2">asterCamp</span>
-  </Link>
-    </div>
+      <div className="flex items-center">
+        <Link to="/">
+          <img src="/logo.png" alt="MasterCamp Logo" className="h-12 w-auto" />
+        </Link>
+      </div>
 
       {/* Navigation */}
       <nav className="hidden md:flex gap-6">

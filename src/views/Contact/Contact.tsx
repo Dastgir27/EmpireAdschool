@@ -1,27 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Box,
-  TextField,
-  Button,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Grid,
-  Typography,
-} from "@mui/material";
-import { MailOutline, Phone, ChatBubbleOutline } from "@mui/icons-material";
+import { MailOutline, Phone } from "@mui/icons-material";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
-    company: "",
     email: "",
     mobile: "",
-    employeeCount: "",
-    helpType: "",
+    age: "",
+    course: "",
+    reference: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +18,7 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSelectChange = (e: any) => {
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -40,186 +29,142 @@ export default function ContactPage() {
   };
 
   return (
-      <Grid container minHeight="100vh">
-        {/* Left Section */}
-        <Grid item xs={12} md={6} sx={{ p: { xs: 4, md: 6 }, bgcolor: "purple.50" }}>
-          <Typography variant="h3" fontWeight="bold" color="purple.900" mb={2}>
-            Contact Us
-          </Typography>
+    <div className="min-h-screen flex flex-col md:flex-row">
+      {/* Left Section */}
+      <div className="w-full md:w-1/2 p-6 md:p-12">
+        <h2 className="text-3xl font-bold text-purple-900 mb-4">Contact Us</h2>
+        <p className="text-lg text-gray-600 mb-6">
+          Have questions? Want to know more about MasterCamp? Fill in your details, and we’ll get back to you with all the answers you need.
+        </p>
 
-          <Typography variant="h6" color="text.secondary" mb={3}>
-            Looking to design employee benefits for your team? Leave your details, and our experts will reach out
-            within 24 hours.
-            <a href="#" style={{ color: "#E91E63", textDecoration: "underline" }}>
-              Solution articles here
-            </a>
-          </Typography>
+        {/* Contact Options */}
+        <div className="space-y-4 mb-8">
+          <ContactOption
+            icon={<MailOutline fontSize="small" className="text-yellow-500" />}
+            title="Write to us at"
+            subtitle="Share your queries here"
+            contact="info@empireadschool.com"
+            link="mailto:info@empireadschool.com"
+          />
+          <ContactOption
+            icon={<Phone fontSize="small" className="text-blue-500" />}
+            title="Call us at"
+            subtitle="Available 24 x 7"
+            contact="+91 74002 25894"
+            link="tel:+917400225894"
+          />
+        </div>
+      </div>
 
-          {/* Contact Options */}
-          <Grid container spacing={2} mb={6}>
-            <ContactOption
-                icon={<MailOutline fontSize="small" color="warning" />}
-                title="Write to us at"
-                subtitle="Share your queries here"
-                contact="support@pazcare.com"
-                link="mailto:support@pazcare.com"
+      {/* Right Section */}
+      <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0 p-6 ">
+        <div className="w-full max-w-md">
+          <h3 className="text-2xl font-bold border-l-4 pl-3 border-pink-500 mb-4 mt-[40px]">
+            Get a call back today!
+          </h3>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-gray-300 rounded-md"
             />
-            <ContactOption
-                icon={<ChatBubbleOutline fontSize="small" color="success" />}
-                title="Chat with us at"
-                subtitle="Instantly access policy here"
-                contact="+91-8197379596"
-                link="tel:+918197379596"
+
+            <div className="relative">
+              <MailOutline className="absolute left-3 top-3 text-gray-400" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full pl-10 p-3 border border-gray-300 rounded-md"
+              />
+            </div>
+
+            <div className="relative">
+              <Phone className="absolute left-3 top-3 text-gray-400" />
+              <input
+                type="tel"
+                name="mobile"
+                placeholder="Mobile Number"
+                value={formData.mobile}
+                onChange={handleChange}
+                required
+                className="w-full pl-10 p-3 border border-gray-300 rounded-md"
+              />
+            </div>
+
+            <input
+              type="number"
+              name="age"
+              placeholder="Age"
+              value={formData.age}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-gray-300 rounded-md"
             />
-            <ContactOption
-                icon={<Phone fontSize="small" color="primary" />}
-                title="Call us at"
-                subtitle="Available 24 x 7"
-                contact="+91-8037834753"
-                link="tel:+918037834753"
+
+
+            <input
+              type="text"
+              name="reference"
+              placeholder="Reference"
+              value={formData.reference}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-md"
             />
-          </Grid>
 
-          <Typography variant="h4" fontWeight="bold" color="purple.900" mb={2}>
-            Our Offices
-          </Typography>
+            <select
+              name="course"
+              value={formData.course}
+              onChange={handleSelectChange}
+              required
+              className="w-full p-3 border border-gray-300 rounded-md bg-white"
+            >
+              <option value="" disabled>Select Course</option>
+              <option value="Ctrl + C Create - Design Mastery Program">
+                Ctrl + C Create - Design Mastery Program
+              </option>
+              <option value="Ctrl + V Visualize - Creative Copy Writing">
+                Ctrl + V Visualize - Creative Copy Writing
+              </option>
+              <option value="Ctrl + C + V Visualize - Master Branding Program">
+                Ctrl + C + V Visualize - Master Branding Program
+              </option>
+            </select>
 
-          <Grid container spacing={2}>
-            <OfficeIcon />
-            <OfficeIcon />
-          </Grid>
-        </Grid>
-
-        {/* Right Section */}
-        <Grid item xs={12} md={6} display="flex" alignItems="center" justifyContent="center" p={6}>
-          <Box maxWidth="400px" width="100%">
-            <Typography variant="h4" fontWeight="bold" mb={3} borderLeft={4} pl={2} borderColor="pink.500">
-              Get a call back today!
-            </Typography>
-
-            {/* Form */}
-            <form onSubmit={handleSubmit}>
-              <TextField
-                  label="Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  fullWidth
-                  required
-                  margin="normal"
-              />
-
-              <TextField
-                  label="Company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  fullWidth
-                  required
-                  margin="normal"
-              />
-
-              <TextField
-                  label="Work email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  fullWidth
-                  required
-                  margin="normal"
-                  InputProps={{
-                    startAdornment: <MailOutline sx={{ color: "gray", mr: 1 }} />,
-                  }}
-              />
-
-              <TextField
-                  label="Mobile number"
-                  name="mobile"
-                  value={formData.mobile}
-                  onChange={handleChange}
-                  fullWidth
-                  required
-                  margin="normal"
-                  InputProps={{
-                    startAdornment: <Phone sx={{ color: "gray", mr: 1 }} />,
-                  }}
-              />
-
-              <FormControl fullWidth required margin="normal">
-                <InputLabel>Company Employee Count</InputLabel>
-                <Select
-                    name="employeeCount"
-                    value={formData.employeeCount}
-                    onChange={handleSelectChange}
-                >
-                  <MenuItem value="1-10">1-10</MenuItem>
-                  <MenuItem value="11-50">11-50</MenuItem>
-                  <MenuItem value="51-200">51-200</MenuItem>
-                  <MenuItem value="201-500">201-500</MenuItem>
-                  <MenuItem value="501+">501+</MenuItem>
-                </Select>
-              </FormControl>
-
-              <FormControl fullWidth required margin="normal">
-                <InputLabel>How can Pazcare help you today?</InputLabel>
-                <Select
-                    name="helpType"
-                    value={formData.helpType}
-                    onChange={handleSelectChange}
-                >
-                  <MenuItem value="health-insurance">Health Insurance</MenuItem>
-                  <MenuItem value="term-life">Term Life Insurance</MenuItem>
-                  <MenuItem value="employee-benefits">Employee Benefits</MenuItem>
-                  <MenuItem value="other">Other</MenuItem>
-                </Select>
-              </FormControl>
-
-              <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{
-                    mt: 2,
-                    py: 1.5,
-                    bgcolor: "pink.500",
-                    "&:hover": { bgcolor: "pink.600" },
-                  }}
-              >
-                Get Quote
-              </Button>
-            </form>
-          </Box>
-        </Grid>
-      </Grid>
+            <button
+              type="submit"
+              className="w-full bg-pink-500 text-white p-3 rounded-md hover:bg-pink-600 transition"
+            >
+              Get Quote
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
 
 // Contact Info Box Component
 function ContactOption({ icon, title, subtitle, contact, link }: any) {
   return (
-      <Grid item xs={12} sm={4}>
-        <Box sx={{ p: 2, bgcolor: "white", borderRadius: 2, boxShadow: 1 }}>
-          <Box sx={{ width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", bgcolor: "grey.100", borderRadius: "50%", mb: 2 }}>
-            {icon}
-          </Box>
-          <Typography variant="subtitle1" fontWeight="bold">{title}</Typography>
-          <Typography variant="body2" color="text.secondary" mb={1}>{subtitle}</Typography>
-          <a href={link} style={{ fontSize: "0.875rem", fontWeight: "bold", textDecoration: "underline", color: "black" }}>
-            {contact}
-          </a>
-        </Box>
-      </Grid>
-  );
-}
-
-// Placeholder Office Icon Component
-function OfficeIcon() {
-  return (
-      <Grid item xs={6}>
-        <Box sx={{ p: 3, bgcolor: "white", borderRadius: 2, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: 1 }}>
-          <Box sx={{ width: 60, height: 60, bgcolor: "grey.300", borderRadius: "50%" }} />
-        </Box>
-      </Grid>
+    <div className="p-4 bg-white rounded-md shadow-md flex flex-col items-start">
+      <div className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full mb-2">
+        {icon}
+      </div>
+      <h4 className="text-lg font-semibold">{title}</h4>
+      <p className="text-gray-500 mb-1">{subtitle}</p>
+      <a href={link} className="text-sm font-bold text-black underline">
+        {contact}
+      </a>
+    </div>
   );
 }
