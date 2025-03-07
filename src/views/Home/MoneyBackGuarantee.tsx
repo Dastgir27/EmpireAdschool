@@ -12,7 +12,7 @@ export default function MoneyBackGuarantee() {
           <span>Caution: Side effects include uncontrollable fame and creative addiction. 🚀🔥</span>
         </div>
       </div>
-     <div className="w-full min-h-screen bg-black text-white shadow-lg">
+     <div className="w-full bg-black text-white shadow-lg">
       <div className="w-full p-8 md:px-24 py-24 flex flex-col md:flex-row items-center gap-10">
         
         {/* Left Side: Text Content */}
