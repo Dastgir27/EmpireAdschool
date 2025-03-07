@@ -59,11 +59,6 @@ export default function CreativeMastery() {
 
   return (
     <div className="bg-[#1A1A1A] text-white">
-      {/* Hero Section */}
-      <div className="text-center py-16 px-6 bg-[#A67C52]">
-        <h1 className="text-4xl font-bold">Ctrl + C + V</h1>
-        <p className="text-lg mt-2">Complete Creative Mastery Program</p>
-      </div>
 
       {/* Introduction */}
       <div className="w-full bg-white text-black shadow-lg">
@@ -115,7 +110,7 @@ export default function CreativeMastery() {
 
 
       {/* Program Highlights */}
-      <div className="w-full bg-black text-white py-16 px-6 md:px-24">
+      <div className="w-full bg-black text-white py-16 px-16 md:px-24">
       <div className="flex flex-col md:flex-row gap-10 items-start">
         {/* Left: List of Highlights */}
         <div className="md:w-1/2">
@@ -223,9 +218,9 @@ export default function CreativeMastery() {
     </div>
 
     <div className="w-full py-16 px-6 md:px-24 bg-white text-black">
-  <div className="flex flex-col md:flex-row items-center gap-10">
-    {/* Left Content: Career Support */}
-    <div className="md:w-1/2">
+       <div className="flex flex-col md:flex-row items-center gap-10">
+      {/* Left Content: Career Support */}
+      <div className="md:w-1/2">
       <h2 className="text-4xl font-bold cerebri-sans-bold">
         🚀 Career Support
       </h2>
@@ -250,41 +245,71 @@ export default function CreativeMastery() {
           <span className="text-[#FF4B00] text-2xl">🌍</span>
           <p className="text-lg font-medium">Lifetime Creative Community – Connect with mentors & alumni</p>
         </div>
-      </div>
-    </div>
+        </div>
+       </div>
 
     {/* Right Image Section */}
-    <div className="md:w-1/2 flex justify-center">
+      <div className="md:w-1/2 flex justify-center">
       <img
         src="https://dummyimage.com/600x400/000/fff"
         alt="Career Support Preview"
         className="w-full md:w-3/4 rounded-lg shadow-lg border border-gray-200"
       />
     </div>
+   </div>
   </div>
-</div>
 
 
 
 
       {/* Fee Structure */}
-      <div className="max-w-5xl mx-auto px-6 py-12 text-center">
-        <h2 className="text-3xl font-bold text-[#D9CDC4]">💰 Fee Structure</h2>
-        <p className="text-[#D9CDC4] mt-4">Combo Program Fee: <span className="font-bold">₹49,999/-</span> (all inclusive)</p>
-        <p className="text-[#A67C52] mt-2 font-bold">🔥 Early Bird Offer: ₹42,999/- for first 10 students</p>
-      </div>
+      <div className="w-full py-16 px-6 md:px-24 bg-black text-white">
+      <div className="flex flex-col md:flex-row items-center gap-10">
+        
+        {/* Left Content: CTA Section */}
+        <div className="md:w-1/2 text-center md:text-left">
+          <h2 className="text-4xl font-bold">
+            🎨 Your Creative Future Starts Here
+          </h2>
+          <p className="text-gray-600 leading-relaxed mt-4 text-white">
+            Join the next-gen creatives shaping the future of branding & advertising.
+          </p>
+          <button 
+  className="mt-6 px-6 py-3 bg-[#FF4B00] text-white font-medium rounded-lg text-lg hover:bg-[#E04300] transition duration-300"
+  onClick={() => window.location.href = "/contact"}
+>
+  Enroll Now
+</button>
+        </div>
 
-      {/* Call to Action */}
-      <div className="text-center py-10 bg-[#005B96]">
-      <h2 className="text-3xl font-bold text-white">Your Creative Future Starts Here</h2>
-      <p className="mt-2 text-white">Join the next-gen creatives shaping the future of branding & advertising</p>
-      <button
-        onClick={() => navigate("/contact")}
-        className="mt-6 px-6 py-3 bg-[#1A1A1A] text-[#D9CDC4] font-medium rounded-lg text-lg hover:bg-[#000] transition duration-300"
-      >
-        Enroll Now
-      </button>
+        {/* Right Content: Career Support */}
+        <div className="md:w-1/2">
+          <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-200">
+            {/* Program Name */}
+            <h2 className="text-2xl cerebri-sans-bold text-black">Complete Creative Mastery Ctrl + C + V</h2>
+            <hr className="my-4 border-gray-300" />
+
+            {/* Fee Structure */}
+            <p className="text-lg font-semibold text-gray-700">💰 Fee Structure</p>
+
+            {/* Combo Program Fee */}
+            <p className="mt-2 text-2xl font-bold text-[#5A2D82]">
+              ₹49,999/- <span className="text-gray-600 text-sm">(all inclusive)</span>
+            </p>
+
+            {/* Early Bird Offer */}
+            <p className="mt-4 text-lg font-semibold text-red-600">
+              🔥 Early Bird Offer: <span className="text-black">₹42,999/-</span> for first 10 students
+            </p>
+
+            {/* Bottom Gradient Line */}
+            <div className="mt-6 h-2 w-full rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500"></div>
+          </div>
+        </div>
+        
+      </div>
     </div>
+
     </div>
   );
 }
