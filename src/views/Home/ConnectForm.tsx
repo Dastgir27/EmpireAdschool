@@ -20,7 +20,7 @@ export default function ConnectForm() {
       }}
     >
       {/* Form Section - Right Aligned on Desktop */}
-      <div className="w-full max-w-xl md:max-w-2xl bg-[#FFF3EB] bg-opacity-95 rounded-3xl shadow-2xl p-6 md:p-10 md:ml-auto">
+      <div className="w-full max-w-xl md:max-w-xl bg-[#FFF3EB] bg-opacity-95 rounded-3xl shadow-2xl p-6 md:p-10 md:ml-auto">
         <h3 className="text-2xl md:text-3xl font-semibold text-center text-[#5A2E1A]">
           Connect with Us
         </h3>

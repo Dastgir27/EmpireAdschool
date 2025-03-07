@@ -13,14 +13,27 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h2 className="text-xl font-bold text-[#FF4B00]">Quick Links</h2>
-            <ul className="mt-2 space-y-2 text-[#D9CDC4]">
-              <li><a href="#" className="hover:text-[#FF4B00] transition">Courses</a></li>
-              <li><a href="#" className="hover:text-[#FF4B00] transition">Admissions</a></li>
-              <li><a href="#" className="hover:text-[#FF4B00] transition">Scholarships</a></li>
-              <li><a href="#" className="hover:text-[#FF4B00] transition">Contact</a></li>
-            </ul>
-          </div>
+  <h2 className="text-xl font-bold text-[#FF4B00]">Courses</h2>
+  <ul className="mt-2 space-y-2 text-[#D9CDC4]">
+    <li>
+      <a href="/creative-thinking" className="hover:text-[#FF4B00] transition">
+        Visualise - Creative Thinking
+      </a>
+    </li>
+    <li>
+      <a href="/design-mastery" className="hover:text-[#FF4B00] transition">
+        Design Mastery Program
+      </a>
+    </li>
+    <li>
+      <a href="/complete-creative-mastery" className="hover:text-[#FF4B00] transition">
+        Complete Creative Mastery
+      </a>
+    </li>
+  </ul>
+</div>
+
+
 
           {/* Contact Info */}
           <div>

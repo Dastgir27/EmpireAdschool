@@ -41,13 +41,6 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* Navigation */}
-      <nav className="hidden md:flex gap-6">
-        <a href="#" className="hover:text-gray-300 transition-colors">YouTube ↗</a>
-        <a href="#" className="hover:text-gray-300 transition-colors">Instagram ↗</a>
-        <a href="#" className="hover:text-gray-300 transition-colors">LinkedIn ↗</a>
-      </nav>
-
       {/* Buttons */}
       <div className="flex gap-3">
         <Link to="/contact" className="hidden md:inline-block border border-white px-4 py-2 rounded-full">
