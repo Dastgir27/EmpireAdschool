@@ -7,7 +7,7 @@ export default function Footer() {
           <div>
             <h2 className="text-xl font-bold text-[#FF4B00]">About Us</h2>
             <p className="mt-2 text-[#D9CDC4] text-sm">
-              MasterCamp Academy provides world-class education and career-transforming courses.
+              Empire Ads School provides world-class education and career-transforming courses.
             </p>
           </div>
 
