@@ -55,7 +55,7 @@ export default function ProgramSections() {
 
   return (
     <section className="py-12 px-6 md:px-16 bg-gray-100 text-black ">
-      <h2 className="text-4xl font-bold text-center mb-8 p-4">Programmes at a Glance</h2>
+      <h2 className="text-4xl font-bold text-center mb-8 p-4 cerebri-sans-bold">Programmes at a Glance</h2>
 
       <div className="flex flex-col md:flex-row gap-6 mb-8">
         {/* Sidebar (Program List) */}

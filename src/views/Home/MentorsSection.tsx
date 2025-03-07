@@ -40,7 +40,9 @@ export default function MentorsSection() {
 
       {/* Left Side: Text Content */}
       <div className="flex-1 max-w-3xl mx-auto text-center md:text-left">
-        <h2 className="text-3xl font-bold">Mentors You’ll Work With</h2>
+      <h2 className="cerebri-sans-bold text-[50px] leading-tight">
+  Bring Your Brain. <br /> We’ll Bring the Madness.
+</h2>
         <p className="text-gray-700 mt-3">
           Learn from creative geniuses, agency founders & brand heads who’ve built the campaigns you admire.
         </p>
