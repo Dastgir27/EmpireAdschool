@@ -5,6 +5,7 @@ import ConnectForm from "./ConnectForm";
 import TestimonialSlider from "./TestimonialSlider";
 import MentorsSection from "./MentorsSection";
 import ProgramSections from "./ProgramSections";
+import { Brochure } from "./Brochure";
 
 export default function Main() {
 
@@ -15,7 +16,8 @@ export default function Main() {
           <MoneyBackGuarantee/>
           <MentorsSection/>
           <ConnectForm/>
-          <TestimonialSlider/>
+          <Brochure/>
+          {/* <TestimonialSlider/> */}
       </div>
   );
 }
