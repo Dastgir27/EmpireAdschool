@@ -141,15 +141,15 @@ export default function CreativeMastery() {
     </div>
 
         {/* Right: Dynamic Content */}
-        <div className="md:w-1/2 bg-white text-black p-6 rounded-lg shadow-lg">
-          <h3 className="text-xl font-bold cerebri-sans-bold">{selected.title}</h3>
-          <p className="mt-3">{selected.description}</p>
-        </div>
+        <div className="md:w-2/5 bg-white text-black p-6 rounded-lg shadow-lg">
+  <h3 className="text-xl font-bold cerebri-sans-bold">{selected.title}</h3>
+  <p className="mt-3">{selected.description}</p>
+</div>
       </div>
     </div>
 
       {/* Certification */}
-      <div className="w-full py-16 px-6 md:px-24 bg-white text-black">
+      <div className="w-full py-24 px-6 md:px-24 bg-white text-black">
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Left Content */}
         <div className="md:w-1/2">
@@ -269,7 +269,7 @@ export default function CreativeMastery() {
         {/* Left Content: CTA Section */}
         <div className="md:w-1/2 text-center md:text-left">
           <h2 className="text-4xl font-bold">
-            🎨 Your Creative Future Starts Here
+            Your Creative Future Starts Here
           </h2>
           <p className="text-gray-600 leading-relaxed mt-4 text-white">
             Join the next-gen creatives shaping the future of branding & advertising.
