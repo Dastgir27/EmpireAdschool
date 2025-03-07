@@ -16,7 +16,7 @@ export default function ConnectForm() {
     <div
       className="w-full min-h-screen flex items-center justify-center md:justify-end bg-cover bg-center px-6 md:px-24 py-12"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL}/office-image.webp)`,
+        backgroundImage: `url(${process.env.PUBLIC_URL}/web-banner-2.jpg)`,
       }}
     >
       {/* Form Section - Right Aligned on Desktop */}

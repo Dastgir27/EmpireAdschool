@@ -1,18 +1,41 @@
-"use client"; // If using Next.js
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function MentorsSection() {
-  return (
-    <div className="w-full px-24 py-24 flex flex-col md:flex-row items-center gap-8 bg-white text-black shadow-lg min-h-screen">
+  const images = [
+    "/slider-1.jpg",
+    "/slider-2.jpg",
+    "/slider-3.jpg",
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
 
-        <div className="flex-1 text-center">
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setIsFading(false);
+      }, 500); // Fade duration
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+  return (
+    <div className="w-full p-8 md:px-24 md:py-24 flex flex-col md:flex-row items-center gap-8 bg-white text-black shadow-lg min-h-screen">
+     <div className="flex-1 text-center overflow-hidden">
+      <div className="relative w-full max-w-[500px] h-[600px] mx-auto">
         <img
-          src="https://dummyimage.com/600x600/000000/ffffff" 
+          src={images[currentIndex]}
           alt="Mentors"
-          className="w-full max-w-[500px] rounded-lg shadow-md"
+          className={`absolute w-full h-full object-cover rounded-lg shadow-xl transition-opacity duration-500 ease-in-out ${
+            isFading ? "opacity-0" : "opacity-100"
+          }`}
         />
       </div>
+    </div>
 
 
       {/* Left Side: Text Content */}

@@ -2,32 +2,34 @@ import React from 'react';
 
 const MasterCampLanding = () => {
   return (
-      <div className="min-h-screen bg-black text-white">
+<div className="min-h-screen bg-black text-white">
 
-        {/* Hero Section */}
-        <section className="py-16 px-12 flex">
-          <div className="w-1/2">
-            <h1 className="text-5xl font-bold leading-tight mb-16">
-              Hands-On Learning.<br/> Real-World Projects.<br/> Mentorship That Matters.
-            </h1>
-          </div>
+{/* Image Section with Overlay Text */}
+<section className="relative px-12 mb-16">
+  <div className="relative w-full overflow-hidden rounded-2xl">
+    {/* Image */}
+    <img
+      src="/web-banner-.jpg"
+      alt="MasterCamp classroom session with instructor and students"
+      className="w-full h-screen object-cover rounded-2xl"
+    />
 
-        </section>
+    {/* Left-Aligned Bold Copyline & Button */}
+    <div className="absolute top-1/2 left-12 transform -translate-y-1/2">
+      <h2 className="text-6xl md:text-8xl font-extrabold uppercase leading-tight">
+        WELCOME TO AD SCHOOL. <br /> PLEASE LEAVE LOGIC OUTSIDE.
+      </h2>
 
-        {/* Image Section */}
-        <section className="px-12 mb-16">
-          <div className="rounded-2xl overflow-hidden">
-            <img
-                src="/banner.jpeg"
-                alt="MasterCamp classroom session with instructor and students"
-                className="w-full h-80 object-cover"
-            />
-          </div>
-        </section>
-       
+      {/* Small Button */}
+      <button className="mt-6 px-6 py-3 bg-white text-black font-bold text-lg rounded-lg hover:bg-gray-300 transition">
+        EXPLORE PROGRAMS
+      </button>
+    </div>
+  </div>
+</section>
 
-
-      </div>
+</div>
+  
   );
 };
 

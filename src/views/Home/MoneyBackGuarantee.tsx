@@ -1,7 +1,7 @@
 
 export default function MoneyBackGuarantee() {
   return (
-    <div className="w-full px-24 py-12 flex flex-col md:flex-row items-center gap-10 bg-[#000000] text-white shadow-lg min-h-screen">
+    <div className="w-full p-8 md:px-24 py-12 flex flex-col md:flex-row items-center gap-10 bg-[#000000] text-white shadow-lg min-h-screen">
       {/* Left Side: Text Content */}
       <div className="flex-1 text-center md:text-left max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold leading-snug">
@@ -34,7 +34,7 @@ export default function MoneyBackGuarantee() {
       {/* Right Side: Image Section */}
       <div className="flex-1 text-center max-w-3xl mx-auto">
         <img
-          src="https://dummyimage.com/600x600/ffffff/000000"
+          src="/guarantee.jpg"
           alt="Happy customer"
           className="w-full max-w-[500px] rounded-lg shadow-md"
         />
