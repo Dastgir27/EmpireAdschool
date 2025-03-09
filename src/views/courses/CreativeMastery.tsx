@@ -2,11 +2,8 @@
 
 import React, {useState} from "react";
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
-import { useNavigate } from "react-router-dom";
 
 export default function CreativeMastery() {
-
-   const navigate = useNavigate();
 
   const highlights = [
     {

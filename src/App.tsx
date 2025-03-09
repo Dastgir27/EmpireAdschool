@@ -9,6 +9,7 @@ import './styles/fonts/fonts.css'
 import Visualise from './views/courses/Visualise';
 import DesignMastery from './views/courses/DesignMastery';
 import CreativeMastery from './views/courses/CreativeMastery';
+import PlacementPolicy from './views/PlacementPolicy'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/creative-thinking" element={<Visualise />} />
         <Route path="/design-mastery" element={<DesignMastery />} />
         <Route path="/complete-creative-mastery" element={<CreativeMastery />} />
+        <Route path="/placement-policy" element={<PlacementPolicy />} />
       </Routes>
       <Footer />
     </Router>

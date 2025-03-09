@@ -47,17 +47,21 @@ export default function Header() {
           Contact Us
         </Link>
 
+        {/* Call Us Button */}
+        <a href="tel:+917400225894" className="hidden md:inline-block border border-white px-4 py-2 rounded-full">
+          Call Us
+        </a>
+
         {/* Explore Programs Button */}
         <button
-        className="bg-white text-black border border-white px-4 py-2 rounded-full flex items-center transition duration-300 hover:bg-black hover:text-white"
-         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            >
+          className="bg-white text-black border border-white px-4 py-2 rounded-full flex items-center transition duration-300 hover:bg-black hover:text-white"
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        >
           Explore Programmes
-            <span className={`ml-2 transform ${isDropdownOpen ? "rotate-180" : "rotate-0"} transition-transform`}>
-          <ExpandMoreIcon />
-         </span>
-          </button>
-
+          <span className={`ml-2 transform ${isDropdownOpen ? "rotate-180" : "rotate-0"} transition-transform`}>
+            <ExpandMoreIcon />
+          </span>
+        </button>
       </div>
 
       {/* Dropdown Section */}
@@ -93,18 +97,6 @@ export default function Header() {
                         <ProgramDetail label="Mode" value={program.mode} />
                         <ProgramDetail label="Format" value={program.format} />
                         <ProgramDetail label="Cohort" value={program.cohort} />
-                      </div>
-
-                      {/* Section Links */}
-                      <div className="flex flex-wrap gap-4 mt-6 text-sm font-medium">
-                        <a href="#" className="hover:text-gray-300 transition-colors">OVERVIEW</a>
-                        <a href="#" className="hover:text-gray-300 transition-colors">WHY {program.title.split(" ")[0]}</a>
-                        <a href="#" className="hover:text-gray-300 transition-colors">PROGRAMME OUTCOMES</a>
-                        <a href="#" className="hover:text-gray-300 transition-colors">HIGHLIGHTS</a>
-                        <a href="#" className="hover:text-gray-300 transition-colors">MEET YOUR MASTERS</a>
-                        <a href="#" className="hover:text-gray-300 transition-colors">EXPERIENTIAL INTERVENTIONS</a>
-                        <a href="#" className="hover:text-gray-300 transition-colors">CURRICULUM</a>
-                        <a href="#" className="hover:text-gray-300 transition-colors">FAQs</a>
                       </div>
                     </Link>
                   )
