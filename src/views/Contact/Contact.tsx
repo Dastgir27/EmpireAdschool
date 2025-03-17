@@ -1,10 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, FormEvent, ChangeEvent } from "react";
 import { MailOutline, Phone } from "@mui/icons-material";
+import emailjs from '@emailjs/browser';
+
+// Define types for form data
+interface FormData {
+  name: string;
+  email: string;
+  mobile: string;
+  age: string;
+  course: string;
+  reference: string;
+}
+
+interface ContactOptionProps {
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+  contact: string;
+  link: string;
+}
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     mobile: "",
@@ -13,20 +32,46 @@ export default function ContactPage() {
     reference: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsLoading(true);
+    setErrorMessage(null);
+  
+    if (!formRef.current) return;
+  
+    try {
+      await emailjs.sendForm(
+        process.env.REACT_APP_SERVICE_ID as string, 
+        process.env.REACT_APP_TEMPLATE_ID as string, 
+        formRef.current as HTMLFormElement, 
+        process.env.REACT_APP_PUBLIC_KEY as string
+      );
+      alert('Message sent successfully!');
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        age: "",
+        course: "",
+        reference: "",
+      });
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setErrorMessage("Failed to send the message. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
+  
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
@@ -37,7 +82,6 @@ export default function ContactPage() {
           Have questions? Want to know more about MasterCamp? Fill in your details, and we’ll get back to you with all the answers you need.
         </p>
 
-        {/* Contact Options */}
         <div className="space-y-4 mb-8">
           <ContactOption
             icon={<MailOutline fontSize="small" className="text-yellow-500" />}
@@ -63,8 +107,9 @@ export default function ContactPage() {
             Get a call back today!
           </h3>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
+
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
               name="name"
@@ -111,7 +156,6 @@ export default function ContactPage() {
               className="w-full p-3 border border-gray-300 rounded-md"
             />
 
-
             <input
               type="text"
               name="reference"
@@ -124,7 +168,7 @@ export default function ContactPage() {
             <select
               name="course"
               value={formData.course}
-              onChange={handleSelectChange}
+              onChange={handleChange}
               required
               className="w-full p-3 border border-gray-300 rounded-md bg-white"
             >
@@ -143,8 +187,9 @@ export default function ContactPage() {
             <button
               type="submit"
               className="w-full bg-pink-500 text-white p-3 rounded-md hover:bg-pink-600 transition"
+              disabled={isLoading}
             >
-              Get Quote
+              {isLoading ? "Sending..." : "Get Quote"}
             </button>
           </form>
         </div>
@@ -153,8 +198,7 @@ export default function ContactPage() {
   );
 }
 
-// Contact Info Box Component
-function ContactOption({ icon, title, subtitle, contact, link }: any) {
+function ContactOption({ icon, title, subtitle, contact, link }: ContactOptionProps) {
   return (
     <div className="p-4 bg-white rounded-md shadow-md flex flex-col items-start">
       <div className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full mb-2">
