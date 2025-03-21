@@ -10,7 +10,7 @@ export default function Header() {
     {
       title: "Design Mastery Program",
       link: "/design-mastery",
-      duration: "1.5 Months",
+      duration: "2 Months",
       mode: "Weekend",
       format: "Hands-on",
       cohort: "April, 2025",
@@ -18,7 +18,7 @@ export default function Header() {
     {
       title: "Creative Thinking & Copyline Mastery",
       link: "/creative-thinking",
-      duration: "1.5 Months",
+      duration: "2 Months",
       mode: "Weekend",
       format: "Bootcamp",
       cohort: "March, 2025",
@@ -26,7 +26,7 @@ export default function Header() {
     {
       title: "Complete Creative Mastery",
       link: "/complete-creative-mastery",
-      duration: "1.5 Months",
+      duration: "2 Months",
       mode: "Weekend",
       format: "Full-Cycle",
       cohort: "June, 2025",

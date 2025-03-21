@@ -291,12 +291,12 @@ export default function CreativeMastery() {
 
             {/* Combo Program Fee */}
             <p className="mt-2 text-2xl font-bold text-[#5A2D82]">
-              ₹49,999/- <span className="text-gray-600 text-sm">(all inclusive)</span>
+              ₹55,999/- <span className="text-gray-600 text-sm">(all inclusive)</span>
             </p>
 
             {/* Early Bird Offer */}
             <p className="mt-4 text-lg font-semibold text-red-600">
-              🔥 Early Bird Offer: <span className="text-black">₹42,999/-</span> for first 10 students
+              🔥 Early Bird Offer: <span className="text-black">₹49,999/-</span> for first 10 students
             </p>
 
             {/* Bottom Gradient Line */}

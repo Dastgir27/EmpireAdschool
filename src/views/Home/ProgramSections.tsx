@@ -8,7 +8,7 @@ export default function ProgramSections() {
           deadline: "24th March, 2025",
           mode: "Blended",
           modeDetails: "In-Person Weekend Classes",
-          duration: "1 Month",
+          duration: "2 Month",
           instructors: "Industry Practitioners",
           keyPoints: [
             " Learn from Top Designers, Brand Creatives & Art Directors to Master Visual Storytelling",
@@ -23,7 +23,7 @@ export default function ProgramSections() {
           deadline: "24th March, 2025",
           mode: "Blended",
           modeDetails: "In-Person Weekend Classes",
-          duration: "1 Month",
+          duration: "2 Month",
           instructors: "Industry Practitioners",
           keyPoints: [
             " Learn from Top Copywriters, Creative Directors & Brand Builders to Master the Art of Words that Sell",
@@ -38,7 +38,7 @@ export default function ProgramSections() {
           deadline: "24th March, 2025",
           mode: "Blended",
           modeDetails: "In-Person Weekend Classes",
-          duration: "1 Month",
+          duration: "2 Month",
           instructors: "Industry Practitioners",
           keyPoints: [
             " Master Visual Storytelling & Killer Copy in One Power-Packed Program",
