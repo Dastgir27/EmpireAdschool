@@ -40,8 +40,8 @@ export default function Footer() {
   <h2 className="text-xl font-bold text-[#FF4B00]">Contact Us</h2>
   <p className="mt-2 text-[#D9CDC4] text-sm leading-relaxed">
     📍 C Wing, Trade World, Kamla Mills Compound, 913-914, Lower Parel, Mumbai, Maharashtra 400013 <br />
-    📞 <a href="tel:+917400225894" className="text-[#FF4B00] font-medium hover:underline">
-      +91 74002 25894
+    📞 <a href="tel:+917715028073" className="text-[#FF4B00] font-medium hover:underline">
+      +91 77150 28073
     </a>
   </p>
 </div>

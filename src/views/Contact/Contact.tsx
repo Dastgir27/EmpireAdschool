@@ -94,8 +94,8 @@ export default function ContactPage() {
             icon={<Phone fontSize="small" className="text-blue-500" />}
             title="Call us at"
             subtitle="Available 24 x 7"
-            contact="+91 74002 25894"
-            link="tel:+917400225894"
+            contact="+91 77150 28073"
+            link="tel:+917715028073"
           />
         </div>
       </div>

@@ -248,7 +248,7 @@ export default function CreativeMastery() {
     {/* Right Image Section */}
       <div className="md:w-1/2 flex justify-center">
       <img
-        src="https://dummyimage.com/600x400/000/fff"
+        src="/career.jpg"
         alt="Career Support Preview"
         className="w-full md:w-3/4 rounded-lg shadow-lg border border-gray-200"
       />

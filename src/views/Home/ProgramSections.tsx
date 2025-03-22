@@ -5,7 +5,7 @@ export default function ProgramSections() {
     const programs = [
         {
           title: "Ctrl + C Create - Design Mastery Program",
-          deadline: "24th March, 2025",
+          deadline: "29th March, 2025",
           mode: "Blended",
           modeDetails: "In-Person Weekend Classes",
           duration: "2 Month",
@@ -13,14 +13,13 @@ export default function ProgramSections() {
           keyPoints: [
             " Learn from Top Designers, Brand Creatives & Art Directors to Master Visual Storytelling",
             " Test your skills with 4 Live Branding Projects — Real Clients, Real Briefs, Real Feedback",
-            " Target average placement of 4.5-8 LPA with Portfolio Curation & Direct Industry Referrals from our Career Advisory Team",
           ],
           image: "/001.jpg",
           link:"/design-mastery",
         },
         {
           title: "Ctrl + V Visualize - Creative Copy Writing",
-          deadline: "24th March, 2025",
+          deadline: "5th April, 2025",
           mode: "Blended",
           modeDetails: "In-Person Weekend Classes",
           duration: "2 Month",
@@ -28,14 +27,13 @@ export default function ProgramSections() {
           keyPoints: [
             " Learn from Top Copywriters, Creative Directors & Brand Builders to Master the Art of Words that Sell",
             " Test your pen with 4 Live Campaign Briefs — Write for Real Brands, Real Products, Real Impact",
-            " Target average placement of 5-9 LPA with Portfolio Showcasing & Direct Connects via our Career Advisory Team",
           ],
           image: "/002.jpg",
           link:"/creative-thinking",
         },
         {
           title: "Ctrl + C + V Visualize - Master Branding Program",
-          deadline: "24th March, 2025",
+          deadline: "5th April, 2025",
           mode: "Blended",
           modeDetails: "In-Person Weekend Classes",
           duration: "2 Month",
@@ -43,7 +41,6 @@ export default function ProgramSections() {
           keyPoints: [
             " Master Visual Storytelling & Killer Copy in One Power-Packed Program",
             " Work on 8 Real Projects — Design it. Write it. Sell it.",
-            " Target average placement of 6-12 LPA with a Portfolio that’s 2X More Powerful",
             " Because great campaigns need both a Headline & a Design that turns heads.",
           ],
           image: "/003.jpg",
